@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
 import CreateNote from "./components/CreateNote";
+import Time from "./Time";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Route path="/create-note">
         <CreateNote />
       </Route>
+
+      <Time />
     </Router>
   );
 }

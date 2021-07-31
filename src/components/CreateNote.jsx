@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function CreateNote() {
   const [input, setInput] = useState({
@@ -8,8 +9,11 @@ function CreateNote() {
 
   function handelChange(event) {
     const { name, value } = event.target;
+    // console.log(event.target);
 
     setInput((prevInput) => {
+      console.log(prevInput);
+
       return {
         ...prevInput,
         [name]: value,
@@ -19,7 +23,13 @@ function CreateNote() {
 
   function handelClick(event) {
     event.preventDefault();
-    console.log(input);
+    // console.log(input);
+    const newNote = {
+      tilte: input.title,
+      content: input.content,
+    };
+
+    axios.post("http://localhost:3001/create", newNote);
   }
 
   return (
@@ -30,18 +40,18 @@ function CreateNote() {
           <input
             type="text"
             onChange={handelChange}
+            name="title"
             placeholder="Note title"
-            value={input.title}
+            // value={input.title}
             className="form-control"
           />
         </div>
         <div className="form-group">
           <textarea
             onChange={handelChange}
-            name=""
-            id=""
+            name="content"
             placeholder="Note details"
-            value={input.content}
+            // value={input.content}
             className="form-control"
           ></textarea>
         </div>

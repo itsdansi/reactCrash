@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 // import Greeting from "./Greeting";
+// import Time from "./Time";
 import App from "./App";
 
 // const name = "Rajan Acharya";
@@ -12,6 +13,7 @@ import App from "./App";
 
 ReactDOM.render(
   //   <Greeting />,
+  // <Time />,
   <App />,
 
   document.getElementById("root")
